@@ -81,7 +81,7 @@
                  <br/>
                  Specific doctors can
                   be selected by patients. 
-                  12
+                  
            </p>
            </div>
        
