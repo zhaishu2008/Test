@@ -106,7 +106,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.3</version>
+        <version>2.7</version>
         <executions>
           <execution>
             <phase>compile</phase>
@@ -126,12 +126,12 @@
 
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.2</version>
       </plugin>
 
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>3.8.0</version>
       </plugin>
 
       <plugin>
@@ -146,17 +146,17 @@
 
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
+        <version>2.22.0</version>
       </plugin>
 
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.6</version>
+        <version>3.7.1</version>
       </plugin>
 
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.0.2</version>
+        <version>3.1.0</version>
       </plugin>
 
       <plugin>
