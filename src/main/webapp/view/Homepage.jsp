@@ -25,7 +25,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hospital Reservation System</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-       <link rel="stylesheet" type="text/css" href="web.css">
+       <link rel="stylesheet" type="text/css" href="web.css"> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -33,13 +33,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </head>
     <body>
-    <script>
+    <script>  
    firebase.auth().onAuthStateChanged(function(user){
     if(user) {
         var email = user.email;
-
+        
         $("#logout").click(function(){firebase.auth().signOut().then(function() {
- window.alert("Log out successfully");
+ window.alert("Log out successfully"); 
  window.location.href="index.jsp";
 }).catch(function(error) {
 });});
@@ -47,23 +47,25 @@
         window.location.herf="index.jsp";
    }});
    $('.collapse').collapse();
-
-   var user = firebase.auth().currentUser;
+   
+   var user = firebase.auth().currentUser; 
     var email= user.email;
   firebase.database().ref('users').set({
-
+    
     email: email;
-
+    
   });
 </script>
 
 
-
-<h1><div id="box"><div id="leftbox"><div id="h1"><strong>HRS</strong>
+  
+  
+     
+     
+     <h1><div id="box"><div id="leftbox"><div id="h1"><strong>HRS</strong>
          </div>
          <div id="table">
          <table>
-             <ul>
           <tr>
               <td><a href="Homepage.jsp">Homepage</a></td>
           </tr>
@@ -76,20 +78,15 @@
              <tr>
                  <td><a href="Setting.html">Setting</a></td>
              </tr>
-             </ul>
-         </table>
-             
-
-         </div>
-         <div id="h2"><button id="logout" class="btn btn-warning">Log out</button></div>
+         </table></div>
          
-         </div>
+             </div>
          <div id="rightbox" >Search
            <div id="text">Search
                <br>
-               <input type="text" width="50" height="20" style="height: 30px;">
+               <input type="text" width="50" height="20">
              <br>
-             <input type="button" value="Search"></div>
+             <input type="button" value="search"></div>
          </div>
          
         </div>
