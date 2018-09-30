@@ -95,6 +95,10 @@
        
 <script>
      loginUser = firebase.auth().currentUser;
+     firebase.database().ref('/Users/' + loginUser.uid).once('value').then(function(snapshot) {
+    var userInfoText = "使用者姓名："+snapshot.val().name+", 使用者年齡:"+snapshot.val().age;
+    
+  });
 </script>
   </body>
 </html>
