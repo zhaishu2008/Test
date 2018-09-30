@@ -39,7 +39,7 @@
 <script> firebase.auth().onAuthStateChanged(function(user){
     if(user) {
         $("#lgbtn").html("My account");
-        $("#lgbtn").click(function(){window.location.href="./view/account.jsp";});
+        $("#lgbtn").click(function(){window.location.href="./view/Homepage.jsp";});
          $("#smbtn").html("Log out");
          $("#smbtn").click(function(){firebase.auth().signOut().then(function() {window.location.herf="index.jsp";
 }).catch(function(error) {

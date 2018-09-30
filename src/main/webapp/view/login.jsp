@@ -88,7 +88,7 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
 firebase.auth().onAuthStateChanged(function(user){
     if(user) {
      window.alert("Log in successfully");
-  window.location.href='account.jsp';
+  window.location.href='Homepage.jsp';
 
  }
                     });};

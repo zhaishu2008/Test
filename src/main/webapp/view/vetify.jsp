@@ -74,7 +74,7 @@ firebase.auth().signOut().then(function() {
         var user = firebase.auth().currentUser; 
         var email_vetified= user.emailVertified;
         if (email_vetified)
-            window.location.href='account.jsp';
+            window.location.href='Homepage.jsp';
     }
     
     </script>
