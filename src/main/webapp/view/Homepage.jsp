@@ -59,14 +59,13 @@
 
 
 
-
-     <h1><div id="box"><div id="leftbox"><div id="h1"><strong>HRS</strong>
+<h1><div id="box"><div id="leftbox"><div id="h1"><strong>HRS</strong>
          </div>
          <div id="table">
          <table>
              <ul>
-             <tr>
-                 <td><a href="Homepage.jsp">Homepage</a></td>
+          <tr>
+              <td><a href="Homepage.jsp">Homepage</a></td>
           </tr>
              <tr>
                  <td><a href="Make appointment.html">Make appointment</a></td>
@@ -75,24 +74,24 @@
                  <td><a href="My appointment.html">My appointment</a></td>
              </tr>
              <tr>
-                 <td><a href="Profile.html">My Profile</a></td>
+                 <td><a href="Setting.html">Setting</a></td>
              </tr>
              </ul>
          </table>
+             
+
          </div>
-                 <button id="logout" class="btn btn-info LogoutBt">Log out</button>
-
-
+         <div id="h2"><button id="logout" class="btn btn-warning">Log out</button></div>
+         
          </div>
          <div id="rightbox" >Search
            <div id="text">Search
                <br>
-
-                 <input type="text" width="50" height="20" style="height: 30px;">
-               <br>
-               <input type="button" value="Search"></div>
+               <input type="text" width="50" height="20" style="height: 30px;">
+             <br>
+             <input type="button" value="Search"></div>
          </div>
-
+         
         </div>
       </h1>
   </body>
