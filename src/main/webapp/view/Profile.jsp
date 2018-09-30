@@ -11,7 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hospital Reservation System</title>
         <link rel="stylesheet" type="text/css" href="web.css"> 
-        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        
+       <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -24,20 +25,19 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
-       
-        
+
     </head>
-    
     <body>
-               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
 
         
        <script>  
@@ -71,6 +71,7 @@
                  <td><a href="Profile.jsp">Setting</a></td>
              </tr>
          </table></div>
+                 <br>
         <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
          
          </div>
