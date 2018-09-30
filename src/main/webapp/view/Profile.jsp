@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+        
 <script>
   // Initialize Firebase
   var config = {
@@ -40,6 +40,20 @@
     </head>
     
     <body>
+       <script>  
+   firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        $("#logout").click(function(){firebase.auth().signOut().then(function() {
+ window.alert("Log out successfully"); 
+ window.location.href="../index.jsp";
+}).catch(function(error) {
+});});
+    }else{
+        window.location.herf="../index.jsp";
+   }});
+ 
+</script>
+
      <h1><div class="box"><div class="leftbox"><div class="h1"><strong>HRS</strong>
          </div>
          <div class="table">
@@ -57,7 +71,7 @@
                  <td><a href="Profile.jsp">Setting</a></td>
              </tr>
          </table></div>
-        <div class="h2"><button class="LogOutBt">Log out</button></div>
+        <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
          
          </div>
          
@@ -74,14 +88,11 @@
                  <div class="column2">Zip<input type="text" style="height: 30px;"></div>
                
             </div>
-             
+             <button class="SaveBt">Save</button>
          </div>
         </div>
       </h1>
         
-        <script>
-            
-           
-        </script>
+
   </body>
 </html>

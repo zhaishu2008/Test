@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Hospital Reservation System</title>
+        <link rel="stylesheet" type="text/css" href="web.css"> 
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -14,20 +17,16 @@
     messagingSenderId: "1538681596"
   };
   firebase.initializeApp(config);
-  var database = firebase.database();
-</script><script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+</script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Hospital Reservation System</title>
-        <link rel="stylesheet" type="text/css" href="web.css"> 
-       
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -36,25 +35,15 @@
     <script>  
    firebase.auth().onAuthStateChanged(function(user){
     if(user) {
-        var email = user.email;
-        
         $("#logout").click(function(){firebase.auth().signOut().then(function() {
  window.alert("Log out successfully"); 
- window.location.href="index.jsp";
+ window.location.href="../index.jsp";
 }).catch(function(error) {
 });});
     }else{
-        window.location.herf="index.jsp";
+        window.location.herf="../index.jsp";
    }});
-   $('.collapse').collapse();
-   
-   var user = firebase.auth().currentUser; 
-    var email= user.email;
-  firebase.database().ref('users').set({
-    
-    email: email;
-    
-  });
+ 
 </script>
 
 
@@ -79,7 +68,7 @@
                  <td><a href="Profile.jsp">Setting</a></td>
              </tr>
          </table></div>
-         <div class="h2"><button class="LogOutBt">Log out</button></div>
+         <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
          
          </div>
          <div class="rightbox" >Search

@@ -162,3 +162,27 @@ td a:hover:not(.active) {
 }
 
 .LogOutBt:hover {opacity: 1}
+
+.SaveBt {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 18px;
+    background-color: #5574F7;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px; 
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+.SaveBt:hover {
+    background-color: #FFFFFF;
+    color: #5574F7;
+}
