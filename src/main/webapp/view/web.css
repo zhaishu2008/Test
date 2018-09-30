@@ -25,6 +25,17 @@
     text-align: center;
     background-color: whitesmoke;
 }
+#right{
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    left: 500px;
+    color: dimgray;
+    text-align: center;
+    font-size: 80px;
+    background-color: whitesmoke;
+    
+}
 
 #h1{
 background-color:darkgray;
@@ -43,6 +54,9 @@ background-color:darkgray;
     font-size: 300px;
     text-align: center;
 }
+#h3{
+    font-size: 30px;
+}
 #table{
     width: auto;
     height: auto;
@@ -60,4 +74,14 @@ background-color:darkgray;
     background-color: whitesmoke;
     top: 250px;
     
+}
+#t2{
+    text-align: center;
+    top: 250px;
+    display: inline;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid bule;
+    background-color: yellow;
 }
