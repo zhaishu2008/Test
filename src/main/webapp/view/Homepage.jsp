@@ -76,8 +76,10 @@
              <tr>
                  <td><a href="Profile.html">My Profile</a></td>
              </tr>
-         </table></div>
-         <button id="logout" class="btn btn-info">Log out</button>
+         </table>
+         </div>
+                 <button id="logout" class="btn btn-info LogoutBt">Log out</button>
+         
          
          </div>
          <div id="rightbox" >Search

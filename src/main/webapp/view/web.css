@@ -64,6 +64,8 @@ background-color:darkgray;
     top: 210px;
     background-color: whitesmoke;
     left: 210px;
+    
+   
 }
 #table tr:nth-child(even){background-color: #ddd;}
 
@@ -85,3 +87,14 @@ background-color:darkgray;
     border: 1px solid bule;
     background-color: yellow;
 }
+
+.LogoutBt{
+
+     position: absolute;
+    left: 0;
+    top: 75%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
