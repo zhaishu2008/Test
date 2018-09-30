@@ -24,8 +24,8 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hospital Reservation System</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-       <link rel="stylesheet" type="text/css" href="web.css"> 
+        <link rel="stylesheet" type="text/css" href="web.css"> 
+       
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -79,14 +79,15 @@
                  <td><a href="Setting.html">Setting</a></td>
              </tr>
          </table></div>
+         <div id="h2"><input type="button" value="Log out"></div>
          
-             </div>
+         </div>
          <div id="rightbox" >Search
            <div id="text">Search
                <br>
-               <input type="text" width="50" height="20">
+               <input type="text" width="50" height="20" style="height: 30px;">
              <br>
-             <input type="button" value="search"></div>
+             <input type="button" value="Search"></div>
          </div>
          
         </div>
