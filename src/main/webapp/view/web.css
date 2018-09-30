@@ -77,7 +77,7 @@ background-color:#5574F7;
  color: #FFFFFF;
  text-decoration: none;
  padding: 20px 16px;
- font-size: 30px;
+ 
 }
 
 .h4:hover{
@@ -93,6 +93,13 @@ background-color:#5574F7;
     width: 400px;
 }
 
+.h6{
+ display: block;
+ color: #FFFFFF;
+ text-decoration: none;
+ padding: 20px 16px;
+ font-size:30px;
+}
 .table{
     width: auto;
     height: auto;

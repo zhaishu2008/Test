@@ -77,9 +77,9 @@
          
          <div class="right" >Setting
             
-             <div class="text"><div class="column"></div><div class="column"><div class="h3">First Name</div><input type="text" placeholder="Your First name" style="height: 30px;">
+             <div class="text"><div class="column"></div><div class="column"><div class="h3">First Name</div><input type="text" id="firstname" placeholder="Your First name" style="height: 30px;">
                  <div class="h3">Phone</div><input type="text" placeholder="000-000-0000" style="height: 30px;"></div>
-                 <div class="column"><div class="h3">Last Name</div><input type="text" placeholder="Your Last name" style="height: 30px;">
+                 <div class="column"><div class="h3">Last Name</div><input type="text" id="lastname" placeholder="Your Last name" style="height: 30px;">
                  <div class="h3">Phone alt</div><input type="text" placeholder="000-000-0000" style="height: 30px;">
                  </div>
                  <br>
@@ -94,11 +94,14 @@
       </h1>
        
 <script>
+    window.onload =function() {
      loginUser = firebase.auth().currentUser;
      firebase.database().ref('/Users/' + loginUser.uid).once('value').then(function(snapshot) {
-    var userInfoText = "使用者姓名："+snapshot.val().name+", 使用者年齡:"+snapshot.val().age;
+    $("#firstname").html(snapshot.val().Firstname);
+    $("#lastname").html(snapshot.val().Lastname);
     
-  });
+  })；
+    }
 </script>
   </body>
 </html>
