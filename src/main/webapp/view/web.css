@@ -1,4 +1,4 @@
-#box{
+.box{
     position: relative;
     width: auto;
     height: auto;
@@ -7,7 +7,7 @@
     left: 70px;
 }
 
-#leftbox{
+.leftbox{
     width: 500px;
     height: 700px;
     position: absolute;
@@ -15,7 +15,7 @@
     left: auto;
     background-color: #5574F7;
 }
-#rightbox{
+.rightbox{
     width: 800px;
     height: 700px;
     position: absolute;
@@ -25,7 +25,7 @@
     text-align: center;
     background-color: whitesmoke;
 }
-#right{
+.right{
     width: 800px;
     height: 700px;
     position: absolute;
@@ -36,14 +36,14 @@
     background-color: whitesmoke;
     
 }
-#boxleft{
+.boxleft{
     background-color: whitesmoke;
     position: absolute;
     width: 400px;
     height: 700px;
     
 }
-#boxright{
+.boxright{
     background-color: #5574F7;
     position: absolute;
     width: 400px;
@@ -52,7 +52,7 @@
     font-size: 60px;
 }
 
-#h1{
+.h1{
 background-color:#5574F7;
     width: 500px;
     height: 150px;
@@ -65,19 +65,19 @@ background-color:#5574F7;
     text-align: center;
     line-height: 150px;
 }
-#h2{
+.h2{
     font-size: 300px;
     text-align: center;
 }
-#h3{
+.h3{
     font-size: 30px;
 }
-#h4{
+.h4{
     color: white;
     font-size: 30px;
 }
 
-#table{
+.table{
     width: auto;
     height: auto;
     position: relative;
@@ -85,9 +85,9 @@ background-color:#5574F7;
     background-color: #5574F7;
     left: 210px;
 }
-#table tr:nth-child(even){background-color: #5574F7;}
+.table tr:nth-child(even){background-color: #5574F7;}
 
-#text{
+.text{
     text-align: center;
     font-size: 40px;
     color: dimgray;
@@ -95,21 +95,21 @@ background-color:#5574F7;
     top: 250px;
     
 }
-#column{
+.column{
     float: left;
     width: 25%;
     padding: 10px;
 }
-#column1{
+.column1{
     width: 50%;
     padding-left: 240px;
 }
-#column2{
+.column2{
     float: left;
     width: 32%;
     font-size: 25px;
 }
-#t2{
+.t2{
     text-align: center;
     top: 250px;
     display: inline;
@@ -144,3 +144,21 @@ td a:hover:not(.active) {
     background-color: #7C9FF1;
     color: white;
 }
+
+.LogOutBt {
+  background-color: white;
+  border: none;
+  color: #5574F7;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.LogOutBt:hover {opacity: 1}
