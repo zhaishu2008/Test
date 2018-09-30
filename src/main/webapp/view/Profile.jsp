@@ -57,7 +57,7 @@
                  <td><a href="Profile.jsp">Setting</a></td>
              </tr>
          </table></div>
-        <div id="h2"><button class="LogOutBt">Log out</button></div>
+        <div class="h2"><button class="LogOutBt">Log out</button></div>
          
          </div>
          
