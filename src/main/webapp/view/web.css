@@ -3,21 +3,21 @@
     width: auto;
     height: auto;
     top: 50px;
-    background-color: darkgray;
+    background-color:#5574F7;
     left: 70px;
 }
 
 #leftbox{
     width: 500px;
-    height: 600px;
+    height: 700px;
     position: absolute;
-    color: black;
+    color: white;
     left: auto;
-    background-color: darkgray;
+    background-color: #5574F7;
 }
 #rightbox{
     width: 800px;
-    height: 600px;
+    height: 700px;
     position: absolute;
     color: whitesmoke;
     left: 500px;
@@ -27,18 +27,33 @@
 }
 #right{
     width: 800px;
-    height: 600px;
+    height: 700px;
     position: absolute;
     left: 500px;
-    color: dimgray;
+    color: #5574F7;
     text-align: center;
-    font-size: 80px;
+    font-size: 70px;
     background-color: whitesmoke;
     
 }
+#boxleft{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    
+}
+#boxright{
+    background-color: #5574F7;
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    left: 400px;
+    font-size: 60px;
+}
 
 #h1{
-background-color:darkgray;
+background-color:#5574F7;
     width: 500px;
     height: 150px;
  position: absolute;
@@ -57,25 +72,42 @@ background-color:darkgray;
 #h3{
     font-size: 30px;
 }
+#h4{
+    color: white;
+    font-size: 30px;
+}
+
 #table{
     width: auto;
     height: auto;
     position: relative;
     top: 210px;
-    background-color: whitesmoke;
+    background-color: #5574F7;
     left: 210px;
-    
-   
 }
-#table tr:nth-child(even){background-color: #ddd;}
+#table tr:nth-child(even){background-color: #5574F7;}
 
 #text{
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     color: dimgray;
     background-color: whitesmoke;
     top: 250px;
     
+}
+#column{
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+#column1{
+    width: 50%;
+    padding-left: 240px;
+}
+#column2{
+    float: left;
+    width: 32%;
+    font-size: 25px;
 }
 #t2{
     text-align: center;
@@ -88,13 +120,27 @@ background-color:darkgray;
     background-color: yellow;
 }
 
-.LogoutBt{
-
-     position: absolute;
-    left: 0;
-    top: 75%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
 }
 
+td a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+td a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
