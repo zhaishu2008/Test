@@ -142,9 +142,7 @@
     <configuration>
         <source>1.8</source>
         <target>1.8</target>
-        <compilerArguments>
-            <endorseddirs>${endorsed.dir}</endorseddirs>
-        </compilerArguments>
+       
     </configuration>
       </plugin>
 
