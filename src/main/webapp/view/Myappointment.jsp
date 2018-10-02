@@ -1,3 +1,9 @@
+<%--
+    Document   : Myappointment
+    Created on : Oct 1, 2018, 11:30:56 PM
+    Author     : Jesse
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -58,16 +64,11 @@
 
 </script>
 
-
-
-
-
-
-     <h1><div class="box"><div class="leftbox"><div class="h1"><strong>HRS</strong>
-         </div>
-         <div class="table">
-         <table>
-          <tr>
+<h1><div class="box"><div class="leftbox"><div class="h1"><strong>HRS</strong>
+    </div>
+   <div class="table">
+    <table>
+      <tr>
           <td><a href="Homepage.jsp">Homepage</a></td>
       </tr>
          <tr>
@@ -79,21 +80,37 @@
          <tr>
              <td><a href="Myappointment.jsp">My appointment</a></td>
          </tr>
-         </table></div>
-                 <br>
+    </table></div>
+            <br>
+   <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
 
-         <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
+    </div>
+   <div class="right" >My appointment
+      <div class="text"><button class="accordion" style="width: 550px;">Appointment 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button" value="Delcet" style="width: 100px; font-size: 50px;"></p></div>
+       <br>
+       <button class="accordion" style="width: 550px;">Appointment 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button" value="Delect" style="width: 100px; font-size: 50px;"></p></div>
+          <br>
+       <button class="accordion" style="width: 550px;">Appointment 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button"  value="Delect" style="width: 100px; font-size: 50px;"></p></div>
+          <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+           for(i = 0; i< acc.length;i++){
+               acc[i].addEventListener("click",function(){
+               this.classList.toggle("active");
+               var panel = this.nextElementSibling;
+               if(panel.style.display==="block"){
+                panel.style.display="none";
+               }else{
+                   panel.style.display = "block";
+               }
+               });
+           }
+          </script>
 
-         </div>
-         <div class="rightbox" >Search
-           <div class="text">Search
-               <br>
-               <input type="text" width="50" height="20" style="height: 30px;">
-             <br>
-             <input type="button" value="Search"></div>
-         </div>
+          </div>
+    </div>
 
-        </div>
-      </h1>
-  </body>
+   </div>
+ </h1>
+    </body>
 </html>

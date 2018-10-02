@@ -12,11 +12,22 @@
         <title>Hospital Reservation System</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="style.css" type="text/css">
+       
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-functions.js"></script>
+
 <script>
   // Initialize Firebase
   var config = {
@@ -30,12 +41,11 @@
   firebase.initializeApp(config);
   var database = firebase.database();
 </script>
+  
+</script>
 
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -43,6 +53,17 @@
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  <link rel="stylesheet" href="dateCss/default.css" id="theme_base">
+
+<link rel="stylesheet" href="dateCss/default.date.css" id="theme_date">
+
+<link rel="stylesheet" href="dateCss/default.time.css" id="theme_time">
+
+<script src="../lib/picker.js"></script>
+
+    <script src="../lib/picker.date.js"></script>
+
+    <script src="../lib/picker.time.js"></script>
 
     </head>
     <body background="../images/login.jpeg">
@@ -87,7 +108,8 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
                 <br/>
    <div class="form-group">
     <label for="DOB">Date Of Birth</label>
-    <input id="DOB" type="text"class="form-control" placeholder="01/01/1900">
+    <input id="DOB" class="form-control" placeholder="01/01/1900">
+    
   </div>
                
                 <br/>
@@ -100,9 +122,9 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
 </div>
 
 <script>
-  $( function() {
-    $( "#DOB" ).datepicker();
-  } );
+    var $input = $("#DOB").pickadate();
+
+
   </script>
   
 <script>
@@ -120,7 +142,7 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
   var errorMessage = error.message;
   window.alert("Error: " + errorMessage);
     });
-    
+   
   firebase.auth().onAuthStateChanged(function(user){
     if(user) {
         firebase.database().ref('Users/'+user.uid).set({
@@ -131,6 +153,7 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
     PhoneNum: num,
     Gender: gender,
     DOB: dob
+    
     
   });   
      window.alert("Sign up successfully");
