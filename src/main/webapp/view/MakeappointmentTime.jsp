@@ -108,20 +108,24 @@
         </div></div>
         <div class="boxright">
            
-            <div>
-                <p class="h6">Date</p>
-  <input id="Date">
+           <div> 
+           <p class="h6" >Date</p >
+  <input id="Date" class="input2" placeholder="DD/MM/yyyy">
   
 </div>
             <br>
-            <br>
-            
+
             
             <div>
-   <p class="h6">Time</p>
-  <input id="Time">
-  
+   <p class="h6">Time</p >
+  <input id="Time" class="input2" placeholder="00:00 AM/PM">
+           <br>
+           <br>
+          
 </div>
+            
+            
+            
         </div>
     </div>
 
