@@ -99,7 +99,7 @@
      <configuration>
        <stage.enableJarSplitting>true</stage.enableJarSplitting>
        <deploy.stopPreviousVersion>true</deploy.stopPreviousVersion>
-       <cloudSdkPath>/Users/Jesse/Downloads/google-cloud-sdk</cloudSdkPath>
+       <cloudSdkPath>/Users/Jesse/google-cloud-sdk</cloudSdkPath>
      </configuration>
   </plugin>
 
