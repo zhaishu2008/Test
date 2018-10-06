@@ -99,7 +99,7 @@
      <configuration>
        <stage.enableJarSplitting>true</stage.enableJarSplitting>
        <deploy.stopPreviousVersion>true</deploy.stopPreviousVersion>
-       <cloudSdkPath>/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk</cloudSdkPath>
+       
      </configuration>
   </plugin>
 
