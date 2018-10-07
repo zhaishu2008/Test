@@ -123,7 +123,6 @@
     $("#lname").val(snapshot.val().Lastname);
     $("#number").val(snapshot.val().PhoneNum);
     
-    
   });
  }});
 }

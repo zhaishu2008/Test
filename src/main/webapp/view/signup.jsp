@@ -136,6 +136,7 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
                       var num = $("#number").val();
                       var gender = $("input:radio[name='gender']:checked").val();
                       var dob = $("#DOB").val();
+                      var isstaff = 0;
     firebase.auth().createUserWithEmailAndPassword(useremail, userpassword).catch(function(error) {
  
   var errorCode = error.code;
@@ -152,7 +153,8 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
     Firstname: firstname,
     PhoneNum: num,
     Gender: gender,
-    DOB: dob
+    DOB: dob,
+    IsStaff: isstaff 
     
     
   });   

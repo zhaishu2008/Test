@@ -48,8 +48,19 @@
   
 <script> firebase.auth().onAuthStateChanged(function(user){
     if(user) {
+       var uid = user.uid;
+        
         $("#lgbtn").html("My account");
-        $("#lgbtn").click(function(){window.location.href="./view/Homepage.jsp";});
+        $("#lgbtn").click(function(){
+            firebase.database().ref('/Users/' + uid).once('value').then(function(snapshot) {
+        var isStaff = snapshot.val().IsStaff;
+        if (isStaff==1){
+            window.location.href="./view/DoctorHomepage.jsp";
+        }
+     else{
+    window.location.href="./view/Homepage.jsp";}
+    });
+   });
          $("#smbtn").html("Log out");
          $("#smbtn").click(function(){firebase.auth().signOut().then(function() {window.location.herf="index.jsp";
 }).catch(function(error) {

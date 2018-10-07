@@ -94,13 +94,13 @@
           <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
         </div></div>
         <div class="boxright">
-        <div class="h6">Department 1</div><br>
-            <div class="h6">Department 2</div><br>
-            <div class="h6">Department 3</div><br>
-            <div class="h6">Department 4</div><br>
-            <div class="h6">Department 5</div><br>
-            <div class="h6">Department 6</div><br>
-            <div class="h6">Department 7</div>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 1</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 2</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 3</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 4</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 5</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 6</a></div><br>
+            <div class="h6"><a href="MakeappointmentHome.jsp">Department 7</a></div>
         </div>
     </div>
 
