@@ -1,7 +1,7 @@
-<%--
-    Document   : MakeappointmentDoctor
-    Created on : Oct 1, 2018, 11:22:20 PM
-    Author     : Jesse
+<%-- 
+    Document   : MagageUser
+    Created on : 2018-10-8, 0:39:34
+    Author     : mac
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -58,8 +58,6 @@
  window.location.href="../index.jsp";
 }).catch(function(error) {
 });});
-
-  
     }else{
         window.location.herf="../index.jsp";
    }});
@@ -70,17 +68,11 @@
      </div>
      <div class="table">
      <table>
-       <tr>
-           <td><a href="Homepage.jsp">Homepage</a></td>
-       </tr>
           <tr>
-              <td><a href="Profile.jsp">My Profile</a></td>
+              <td><a href="Appointment.jsp">Appointment</a>
           </tr>
           <tr>
-              <td><a href="MakeappointmentHome.jsp">Make appointment</a>
-          </tr>
-          <tr>
-              <td><a href="Myappointment.jsp">My appointment</a></td>
+              <td><a href="Management.jsp">Management</a></td>
           </tr>
      </table></div>
             <br>
@@ -88,19 +80,18 @@
 
      </div>
      <div class="right" >
-         <div class="boxleft">Booking Now
-             <div class="text"><br><br><div class="h3"><a id="depart" onclick="selectDepart()" href="MakeappointmentDepart.jsp">Select Department</a></div>
+         <div class="boxleft">Manage
+             <div class="text"><br><br><div class="h3"><a href="ManageDoctor.jsp">Doctor</a></div>
            <br>
-           <div class="h3" ><a id="doctor" onclick="selectHome()" href="MakeappointmentHome.jsp">Select Doctor</a></div>
-                 
+                 <div class="h3"><a href="ManageDepartment.jsp">Department</a></div>
            <br>
-           <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
+           <div class="h3"><a href="MagageUser.jsp">User</a></div>
          </div></div>
          <div class="boxright"><div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
-                 <div class="h4" ><br><p onclick="selectDoctor()">Shan Wilson</p></div></div>
-                 </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunction()">Show Doctor Information<span class="popuptext" id="myPopup">SADshagd ashjh LS  fhieu dsf sdadasdada
+                 <div class="h4" ><br><p>Better Jeson</p></div></div>
+                 </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunction()">Show Doctor Information<span class="popuptext" id="myPopup">Dtsaswdad ashjh LS  fhieu dsf sdadasdada
               sadasdada</span></div>
 
                  </div></div></div></div>
@@ -108,7 +99,7 @@
              <div  class="sbox1"><div class="txt1">
              <div class="card"><div class="column3"><img src="as.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
-                 <div class="h4" ><br><p onclick="selectDoctor()">Petter pianapple</p></div></div>
+                 <div class="h4" ><br><p>Wollio Chen</p></div></div>
                  </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunctiona()">Show Doctor Information<span class="popuptext" id="myPopups">asas Li Bei Lei 大坏蛋大笨猪 猪猪猪猪 猪猪猪 猪猪猪</span></div>
 
                  </div></div></div></div>
@@ -116,8 +107,8 @@
              <div class="sbox2"><div class="txt1">
              <div class="card"><div class="column3"><img src="ss.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
-                 <div class="h4" ><br><p onclick="selectDoctor()">Ko Lisdwa</p></div></div>
-                 </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunctions()">Show Doctor Information<span class="popuptext" id="myPopupx">adadada as ada   ada dad   dffffaa a asdadadadada
+                 <div class="h4" ><br><p>Weason Aliex</p></div></div>
+                 </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunctions()">Show Doctor Information<span class="popuptext" id="myPopupx">Dasz sdw Wsacasadad  ada dad   dffffaa a asdadadadada
               sadasdada</span></div>
 
                  </div></div></div></div>
@@ -144,62 +135,8 @@
                  var popup = document.getElementById("myPopupx");
                  popup.classList.toggle("show");
              }
-             
-   function selectDoctor(){
-       var department = $("#depart").text();
- var doctor=event.target.innerText;
- console.log(doctor);
-var url="MakeappointmentHome.jsp"+"?"+department+"&"+doctor;
-    window.location.assign(encodeURI(url)); 
-    }
-    
-    function selectDepart(){
- var department = $("#depart").text();
- var Doctor = $("#doctor").text();
- 
- console.log(department);
- console.log(Doctor);
 
-var url="MakeappointDepart.jsp"+"?"+department+"&"+Doctor;
-    window.location.assign(encodeURI(url)); 
-}
-
-function selectHome(){
- var department = $("#depart").text();
- var Doctor = $("#doctor").text();
- 
- console.log(department);
- console.log(Doctor);
-
-var url="MakeappointHome.jsp"+"?"+department+"&"+Doctor;
-    window.location.assign(encodeURI(url)); 
-}
-    
-window.onload = load();
-function load(){
-    firebase.auth().onAuthStateChanged(function(user){
-    if(user) {
-        var url=location.href; 
-
- console.log(url);
-  var previous = document.referrer;
- 
-  
-      console.log(url);
-var txt=url.split("?")[1];
-var depart=txt.split("&")[0];
-
-var doctor=txt.split("&")[1];
-console.log(txt);
-       console.log(depart);
-       console.log(doctor);
-       $("#depart").text(depart);
-         $("#doctor").text(doctor);
-     
-    }
-});
-
-}
 </script>
 </body>
 </html>
+

@@ -1,3 +1,9 @@
+<%-- 
+    Document   : ManageDepartment
+    Created on : 2018-10-8, 0:39:14
+    Author     : mac
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -5,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hospital Reservation System</title>
         <link rel="stylesheet" type="text/css" href="web.css">
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
          <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -58,42 +64,43 @@
 
 </script>
 
-
-
-
-
-
-     <h1><div class="box"><div class="leftbox"><div class="h1"><strong>HRS</strong>
-         </div>
-         <div class="table">
-         <table>
-          <tr>
-          <td><a href="Homepage.jsp">Homepage</a></td>
-      </tr>
+<h1><div class="box"><div class="leftbox"><div class="h1"><strong>HRS</strong>
+    </div>
+    <div class="table">
+    <table>
+      
          <tr>
-             <td><a href="Profile.jsp">My Profile</a></td>
+             <td><a href="Appointment.jsp">Appointment</a>
          </tr>
          <tr>
-             <td><a href="MakeappointmentHome.jsp">Make appointment</a>
+             <td><a href="Management.jsp">Management</a></td>
          </tr>
-         <tr>
-             <td><a href="Myappointment.jsp">My appointment</a></td>
-         </tr>
-         </table></div>
-                 <br>
+    </table></div>
+            <br>
+   <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
 
-         <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
-
-         </div>
-         <div class="rightbox" >Search
-           <div class="text">Search
-               <br>
-               <input type="text" width="50" height="20" style="height: 30px;">
-             <br>
-             <input type="button" value="Search"></div>
-         </div>
-
+    </div>
+    <div class="right" >
+        <div class="boxleft">Manage
+            <div class="text"><br><br><div class="h3"><a href="ManageDoctor.jsp">Doctor</a></div>
+          <br>
+          <div class="h3"><a href="ManageDepartment.jsp">Department</a></div>
+          <br>
+          <div class="h3"><a href="MagageUser.jsp">User</a></div>
+        </div></div>
+        <div class="boxright">
+        <div class="h6">Internal Clinic</div><br>
+            <div class="h6">Ophthalmology</div><br>
+            <div class="h6">Oncology</div><br>
+            <div class="h6">Orthopaedic Surgery</div><br>
+            <div class="h6">Surgical Clinic</div><br>
+            <div class="h6">Gynecology </div><br>
+            <div class="h6">Neurology</div><br>
+            <div class="h6">Endoscopy</div>
         </div>
-      </h1>
-  </body>
+    </div>
+
+   </div>
+ </h1>
+    </body>
 </html>

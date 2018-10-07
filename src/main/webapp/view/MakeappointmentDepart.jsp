@@ -58,6 +58,7 @@
  window.location.href="../index.jsp";
 }).catch(function(error) {
 });});
+
     }else{
         window.location.herf="../index.jsp";
    }});
@@ -87,24 +88,88 @@
     </div>
     <div class="right" >
         <div class="boxleft">Booking Now
-            <div class="text"><br><br><div class="h3"><a href="MakeappointmentHome.jsp">Select Department</a></div>
+            <div class="text"><br><br><div class="h3" ><a id="depart" onclick="selectHome()" href="MakeappointmentHome.jsp">Select Department</a></div>
           <br>
-          <div class="h3"><a href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
+                     <div class="h3" ><a id="doctor" onclick="selectDoctor()" href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
+
           <br>
           <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
         </div></div>
         <div class="boxright">
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 1</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 2</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 3</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 4</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 5</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 6</a></div><br>
-            <div class="h6"><a href="MakeappointmentHome.jsp">Department 7</a></div>
+            <div class="h6" onclick="selectDepart()">Department1</div><br>
+            <div class="h6" onclick="selectDepart()">Department2</div><br>
+            <div class="h6" onclick="selectDepart()">Department3</div><br>
+            <div class="h6" onclick="selectDepart()">Department4</div><br>
+            <div class="h6" onclick="selectDepart()">Department5</div><br>
+            <div class="h6" onclick="selectDepart()">Department6</div><br>
+            <div class="h6" onclick="selectDepart()">Department7</div>
         </div>
     </div>
 
    </div>
  </h1>
+
+<script>
+   function selectDepart(){
+ var department=event.target.innerText;
+ var Doctor = $("#doctor").text();
+ console.log(department);
+
+var url="MakeappointmentDoctor.jsp"+"?"+department+"&"+Doctor;
+    window.location.assign(encodeURI(url)); 
+    }
+    
+    
+
+    function selectDoctor(){
+ var department = $("#depart").text();
+ var Doctor = $("#doctor").text();
+ 
+ console.log(department);
+ console.log(Doctor);
+
+var url="MakeappointDoctor.jsp"+"?"+department+"&"+Doctor;
+    window.location.assign(encodeURI(url)); 
+}
+
+function selectHome(){
+ var department = $("#depart").text();
+ var Doctor = $("#doctor").text();
+ 
+ console.log(department);
+ console.log(Doctor);
+
+ var url="MakeappointHome.jsp"+"?"+department+"&"+Doctor;
+    window.location.assign(encodeURI(url)); 
+}
+
+
+window.onload = load();
+function load(){
+    firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        var url=location.href; 
+
+ console.log(url);
+  var previous = document.referrer;
+ 
+  
+      console.log(url);
+var txt=url.split("?")[1];
+var depart=txt.split("&")[0];
+
+var doctor=txt.split("&")[1];
+
+console.log(txt);
+       console.log(depart);
+       console.log(doctor);
+       $("#depart").text(depart);
+         $("#doctor").text(doctor);
+     
+    }
+});
+}
+</script>
     </body>
+    
 </html>

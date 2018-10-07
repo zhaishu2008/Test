@@ -58,6 +58,8 @@
  window.location.href="../index.jsp";
 }).catch(function(error) {
 });});
+ 
+ 
     }else{
         window.location.herf="../index.jsp";
    }});
@@ -86,9 +88,9 @@
 
     </div>
     <div class="right" >Booking Now
-        <div class="text"><br><br><div class="h3"><a href="MakeappointmentDepart.jsp">Select Department</a></div>
+        <div class="text"><br><br><div class="h3"><a id="depart" onclick="selectDepart()" href="MakeappointmentDepart.jsp">Select Department</a></div>
           <br>
-          <div class="h3"><a href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
+          <div class="h3" ><a id="doctor" onclick="selectDoctor()" href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
           <br>
             <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
           </div>
@@ -96,7 +98,54 @@
 
    </div>
  </h1>
+<script>
+   function selectDepart(){
+ var department = $("#depart").text();
+ var Doctor = $("#doctor").text();
+ 
+ console.log(department);
+ console.log(Doctor);
 
+var url="MakeappointDepart.jsp"+"?"+department+"&"+Doctor;
+    window.location.assign(encodeURI(url)); 
+}
+    
+    function selectDoctor(){
+ var department = $("#depart").text();
+ var Doctor = $("#doctor").text();
+ 
+ 
+
+
+var url="MakeappointDoctor.jsp"+"?"+department+"&"+Doctor;
+    window.location.assign(encodeURI(url)); 
+}
+
+window.onload = load();
+function load(){
+   
+    firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        var url=location.href; 
+
+ console.log(url);
+  var previous = document.referrer;
+ 
+  if(previous.indexOf("&")>0){
+      console.log(url);
+var txt=url.split("?")[1];
+var depart=txt.split("&")[0];
+var doctor=txt.split("&")[1];
+console.log(txt);
+       console.log(depart);
+       console.log(doctor);
+       $("#depart").text(depart);
+         $("#doctor").text(doctor);
+     }
+    }
+});
+}
+</script>
 
 
     </body>

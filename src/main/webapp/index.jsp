@@ -4,7 +4,7 @@
 <html>
 <head>
   
- 
+ <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
 <!-- Firebase App is always required and must be first -->
 <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>

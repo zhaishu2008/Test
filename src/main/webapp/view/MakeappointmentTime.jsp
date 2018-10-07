@@ -120,10 +120,11 @@
    <p class="h6">Time</p >
   <input id="Time" class="input2" placeholder="00:00 AM/PM">
            <br>
+            <div class="h2"><button id="comfirm" class="LogOutBt">Comfirm</button></div>
            <br>
           
 </div>
-            
+           
             
             
         </div>
@@ -137,6 +138,20 @@
      var $input = $("#Time").pickatime({
    min: [9,0],
   max: [17,0]
+});
+
+$("#comfirm").click(function(){
+    var appointmentRef = firebase.database().ref('/Appointments:/' + loginUser.uid);
+    postRef.push().set({
+    uid: loginUser.uid,
+    title: postTitle.value,
+    content:postContent.value,
+    age:parseInt(postLimitAge.value)
+  }).then(function(){
+    console.log("新增Post成功");
+  }).catch(function(err){
+    console.error("新增Post錯誤：",err);
+  });
 });
 
 
