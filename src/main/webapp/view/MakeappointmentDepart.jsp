@@ -99,7 +99,8 @@
             <div class="h6">Department 3</div><br>
             <div class="h6">Department 4</div><br>
             <div class="h6">Department 5</div><br>
-            <div class="h6">Department 6</div>
+            <div class="h6">Department 6</div><br>
+            <div class="h6">Department 7</div>
         </div>
     </div>
 
