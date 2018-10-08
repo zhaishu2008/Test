@@ -189,6 +189,8 @@ $("#comfirm").click(function(){
     console.error("error：",err);
   });
   });
+  window.alert("Making appointment successfully");
+  window.location.href="MakeappointmentHome";
   
    /*     var doctorappointmentRef = firebase.database().ref('/Doctor/'+doctor.uid);
     doctorappointmentRef.push().set({
