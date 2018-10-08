@@ -170,7 +170,8 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
 
  }
   
-});}
+});
+}
 
 
 </script>

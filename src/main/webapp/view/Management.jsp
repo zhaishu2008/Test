@@ -68,9 +68,7 @@
     </div>
     <div class="table">
     <table>
-         <tr>
-             <td><a href="Appointment.jsp">Appointment</a>
-         </tr>
+         
          <tr>
              <td><a href="Management.jsp">Management</a></td>
          </tr>
@@ -84,7 +82,7 @@
           <br>
           <div class="h3"><a href="ManageDepartment.jsp">Department</a></div>
           <br>
-            <div class="h3"><a href="MagageUser.jsp">User</a></div>
+            <div class="h3"><a href="ManageUser.jsp">User</a></div>
           </div>
     </div>
 

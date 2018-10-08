@@ -68,9 +68,7 @@
      </div>
      <div class="table">
      <table>
-          <tr>
-              <td><a href="Appointment.jsp">Appointment</a>
-          </tr>
+          
           <tr>
               <td><a href="Management.jsp">Management</a></td>
           </tr>
@@ -87,7 +85,11 @@
            <br>
            <div class="h3"><a href="ManageUser.jsp">User</a></div>
          </div></div>
-         <div class="boxright"><div class="sbox"><div class="txt1">
+         <div class="boxright">
+             <div> <a href="AdminAddDoctor.jsp">
+       <img src="../images/add.png" width="8%" height="30px">
+                         </a></div>
+             <div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Shan Wilson</p></div></div>
