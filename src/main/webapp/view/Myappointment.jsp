@@ -91,7 +91,24 @@
        <button class="accordion" style="width: 550px;">Appointment 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button" value="Delect" style="width: 100px; font-size: 50px;"></p></div>
           <br>
        <button class="accordion" style="width: 550px;">Appointment 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button"  value="Delect" style="width: 100px; font-size: 50px;"></p></div>
-          <script>
+          
+       
+       <script>
+           window.onload = onload();
+           function onload(){
+           firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+    
+  var uid = user.uid;
+  
+     firebase.database().ref('/Users/' + uid+"/Appointments").once('value').then(function(snapshot) {
+    console.log(snapshot.val());
+   
+  });
+ }});
+}
+
+
           var acc = document.getElementsByClassName("accordion");
           var i;
            for(i = 0; i< acc.length;i++){

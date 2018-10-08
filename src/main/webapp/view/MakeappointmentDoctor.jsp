@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="HospitalReservationSystem.Makeappointment"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,7 +51,11 @@
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
+<jsp:useBean id="makeappointment" scope="session" class="HospitalReservationSystem.Makeappointment">
+   <jsp:setProperty name="makeappointment" property="*"/>
+  
+</jsp:useBean>
+  
     <script>
    firebase.auth().onAuthStateChanged(function(user){
     if(user) {
@@ -91,17 +97,18 @@
          <div class="boxleft">Booking Now
              <div class="text"><br><br><div class="h3"><a id="depart" onclick="selectDepart()" href="MakeappointmentDepart.jsp">Select Department</a></div>
            <br>
-           <div class="h3" ><a id="doctor" onclick="selectHome()" href="MakeappointmentHome.jsp">Select Doctor</a></div>
                  
            <br>
            <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
+                     <form><input type="text" name="selecteddoctor" id="selectedDoctor"value="dd" style="visibility:hidden"></form>
+
          </div></div>
          <div class="boxright"><div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p onclick="selectDoctor()">Shan Wilson</p></div></div>
                  </div></div><div class="txt2"><div class="h5"><div class="popup" onclick="myFunction()">Show Doctor Information<span class="popuptext" id="myPopup">SADshagd ashjh LS  fhieu dsf sdadasdada
-              sadasdada</span></div>
+              Excellent</span></div>
 
                  </div></div></div></div>
              <br>
@@ -148,8 +155,9 @@
    function selectDoctor(){
        var department = $("#depart").text();
  var doctor=event.target.innerText;
+ $("#selectedDoctor").val(doctor);
  console.log(doctor);
-var url="MakeappointmentHome.jsp"+"?"+department+"&"+doctor;
+var url="MakeappointmentTime.jsp"+"?"+department+"&"+doctor;
     window.location.assign(encodeURI(url)); 
     }
     
@@ -164,16 +172,7 @@ var url="MakeappointDepart.jsp"+"?"+department+"&"+Doctor;
     window.location.assign(encodeURI(url)); 
 }
 
-function selectHome(){
- var department = $("#depart").text();
- var Doctor = $("#doctor").text();
- 
- console.log(department);
- console.log(Doctor);
 
-var url="MakeappointHome.jsp"+"?"+department+"&"+Doctor;
-    window.location.assign(encodeURI(url)); 
-}
     
 window.onload = load();
 function load(){

@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="HospitalReservationSystem.Makeappointment"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,6 +44,8 @@
 
 
     </head>
+    
+    
     <body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -49,7 +53,11 @@
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
+<jsp:useBean id="makeappointment" scope="session" class="HospitalReservationSystem.Makeappointment">
+   <jsp:setProperty name="makeappointment" property="*"/>
+  
+</jsp:useBean>
+   
     <script>
    firebase.auth().onAuthStateChanged(function(user){
     if(user) {
@@ -88,12 +96,13 @@
     </div>
     <div class="right" >
         <div class="boxleft">Booking Now
-            <div class="text"><br><br><div class="h3" ><a id="depart" onclick="selectHome()" href="MakeappointmentHome.jsp">Select Department</a></div>
+            <div class="text"><br><br>
           <br>
                      <div class="h3" ><a id="doctor" onclick="selectDoctor()" href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
 
           <br>
           <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
+          <form><input type="text" name="selecteddepartment" id="selectedDepart"value="" style="visibility:hidden"></form>
         </div></div>
         <div class="boxright">
             <div class="h6" onclick="selectDepart()">Department1</div><br>
@@ -113,6 +122,7 @@
    function selectDepart(){
  var department=event.target.innerText;
  var Doctor = $("#doctor").text();
+ $("#selectedDepart").val(department);
  console.log(department);
 
 var url="MakeappointmentDoctor.jsp"+"?"+department+"&"+Doctor;
@@ -132,16 +142,6 @@ var url="MakeappointDoctor.jsp"+"?"+department+"&"+Doctor;
     window.location.assign(encodeURI(url)); 
 }
 
-function selectHome(){
- var department = $("#depart").text();
- var Doctor = $("#doctor").text();
- 
- console.log(department);
- console.log(Doctor);
-
- var url="MakeappointHome.jsp"+"?"+department+"&"+Doctor;
-    window.location.assign(encodeURI(url)); 
-}
 
 
 window.onload = load();

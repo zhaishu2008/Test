@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="HospitalReservationSystem.HelloAppEngine" %>
+
 <html>
 <head>
   
@@ -52,8 +52,12 @@
         
         $("#lgbtn").html("My account");
         $("#lgbtn").click(function(){
+            if (uid.indexOf("AZb6cOObuOG5e1m0pQ")>0){
+                 window.location.href="./view/Admin.jsp";
+             }
             firebase.database().ref('/Users/' + uid).once('value').then(function(snapshot) {
         var isStaff = snapshot.val().IsStaff;
+        
         if (isStaff==1){
             window.location.href="./view/DoctorHomepage.jsp";
         }

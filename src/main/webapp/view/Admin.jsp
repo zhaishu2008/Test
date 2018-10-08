@@ -68,9 +68,7 @@
      </div>
      <div class="table">
      <table>
-          <tr>
-              <td><a href="Appointment.jsp">Appointment</a>
-          </tr>
+          
           <tr>
               <td><a href="Management.jsp">Management</a></td>
           </tr>

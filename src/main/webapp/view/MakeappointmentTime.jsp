@@ -100,11 +100,11 @@
     </div>
     <div class="right" >
         <div class="boxleft">Booking Now
-            <div class="text"><br><br><div class="h3"><a href="MakeappointmentDepart.jsp">Select Department</a></div>
+            <div class="text"><br><br><div class="h3"><a id="depart" href="MakeappointmentDepart.jsp">Select Department</a></div>
           <br>
-          <div class="h3"><a href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
+          <div class="h3"><a id="doctor" href="MakeappointmentDoctor.jsp">Select Doctor</a></div>
           <br>
-          <div class="h3"><a href="MakeappointmentHome.jsp">Select Time</a></div>
+          
         </div></div>
         <div class="boxright">
            
@@ -120,9 +120,11 @@
    <p class="h6">Time</p >
   <input id="Time" class="input2" placeholder="00:00 AM/PM">
            <br>
+           <textarea id="comments" rows="4" cols="50">please give any comments</textarea>
             <div class="h2"><button id="comfirm" class="LogOutBt">Comfirm</button></div>
            <br>
           
+
 </div>
            
             
@@ -140,21 +142,96 @@
   max: [17,0]
 });
 
+
+ firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        var previous = document.referrer;
+        
+    if(previous.indexOf("Selct")>0)
+   {
+       window.alert("please select department and doctor");
+   }
+   else
+   {
+        
 $("#comfirm").click(function(){
-    var appointmentRef = firebase.database().ref('/Appointments:/' + loginUser.uid);
-    postRef.push().set({
-    uid: loginUser.uid,
-    title: postTitle.value,
-    content:postContent.value,
-    age:parseInt(postLimitAge.value)
+    firebase.database().ref('/Users/' + user.uid).once('value').then(function(snapshot) {
+    var firstname = snapshot.val().Firstname;
+    var lastname = snapshot.val().Lastname;
+    var patientname = firstname+" "+lastname;
+    
+   console.log($("#depart").text());
+    
+        var appointmentRef = firebase.database().ref('/Appointments');
+    appointmentRef.push().set({
+    uid: user.uid,
+    Patient: patientname,
+    Time: $("#Time").val(),
+    Date: $("#Date").val(),
+    Comments: $("#comments").val(),
+    DoctorName: $("#depart").text(),
+    Department: $("#doctor").text()
   }).then(function(){
-    console.log("新增Post成功");
+    console.log("success");
   }).catch(function(err){
-    console.error("新增Post錯誤：",err);
+    console.error("error：",err);
   });
+  var userappointmentRef = firebase.database().ref('/Users/'+user.uid+"/Appointments");
+    userappointmentRef.push().set({
+    Time: $("#Time").val(),
+    Date: $("#Date").val(),
+    Comments: $("#comments").val(),
+    DoctorName: $("#depart").text(),
+    Department: $("#doctor").text()
+  }).then(function(){
+    console.log("success");
+  }).catch(function(err){
+    console.error("error：",err);
+  });
+  });
+  
+   /*     var doctorappointmentRef = firebase.database().ref('/Doctor/'+doctor.uid);
+    doctorappointmentRef.push().set({
+     uid: user.uid,
+     Patient: patientname,
+    Time: $("#Time").val(),
+    Date: $("#Date").val(),
+    Comments: $("#comments").val(),
+    Department: $("#doctor").val()
+  }).then(function(){
+    console.log("success");
+  }).catch(function(err){
+    console.error("error：",err);
+  });
+}*/
+});}
+}});
+
+
+window.onload = load();
+function load(){
+   
+    firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        var url=location.href; 
+
+ console.log(url);
+  var previous = document.referrer;
+ 
+  if(previous.indexOf("&")>0){
+      console.log(url);
+var txt=url.split("?")[1];
+var depart=txt.split("&")[0];
+var doctor=txt.split("&")[1];
+console.log(txt);
+       console.log(depart);
+       console.log(doctor);
+       $("#depart").text(depart);
+         $("#doctor").text(doctor);
+     }
+    }
 });
-
-
+}
   </script>
 
     </body>

@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="HospitalReservationSystem.Makeappointment"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,6 +44,11 @@
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  
+  <jsp:useBean id="makeappointment" scope="session" class="HospitalReservationSystem.Makeappointment">
+      <jsp:setProperty name="makeappointment" property="selecteddepartment" value="Select Department"/>
+   <jsp:setProperty name="makeappointment" property="selecteddoctor" value="Select Doctor"/>
+</jsp:useBean>
 
     <script>
    firebase.auth().onAuthStateChanged(function(user){

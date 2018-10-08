@@ -95,7 +95,11 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
 firebase.auth().onAuthStateChanged(function(user){
     
         if(user) {
+            
              var uid = user.uid;
+             if (uid.indexOf("AZb6cOObuOG5e1m0pQ")>0){
+                 window.location.href="Admin.jsp";
+             }
     firebase.database().ref('/Users/' + uid).once('value').then(function(snapshot) {
         var isStaff = snapshot.val().IsStaff;
         if (isStaff==1){
