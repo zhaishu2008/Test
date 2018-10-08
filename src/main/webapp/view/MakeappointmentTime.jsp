@@ -181,8 +181,8 @@ $("#comfirm").click(function(){
     Time: $("#Time").val(),
     Date: $("#Date").val(),
     Comments: $("#comments").val(),
-    DoctorName: $("#depart").text(),
-    Department: $("#doctor").text()
+    DoctorName: $("#doctor").text(),
+    Department: $("#depart").text()
   }).then(function(){
     console.log("success");
   }).catch(function(err){

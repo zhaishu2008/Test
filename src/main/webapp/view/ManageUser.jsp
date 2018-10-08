@@ -91,6 +91,9 @@
                      <div> <a href="AdminAddUser.jsp">
        <img src="../images/add.png" width="8%" height="30px">
                          </a></div>
+                      
+                      
+                    
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Better Jeson</p></div></div>
@@ -99,7 +102,7 @@
 
                  </div></div></div></div>
              <br>
-             <div  class="sbox1"><div class="txt1">
+             <div  class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="as.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Wollio Chen</p></div></div>
@@ -107,7 +110,7 @@
 
                  </div></div></div></div>
              <br>
-             <div class="sbox2"><div class="txt1">
+             <div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="ss.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Weason Aliex</p></div></div>
@@ -147,13 +150,24 @@ var leadsRef = firebase.database().ref('/Users');
 leadsRef.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val().Email;
-     var i = 0;
-     i++;
      myArray.push(childData);
-      console.log(myArray);
+      
      
     });
-});}
+    console.log(myArray);
+   console.log(myArray.length);
+var addUser = "";
+var lenn=myArray.length;
+for(var i=0;i<lenn;i++){
+    addUser = addUser+myArray[i];
+        console.log(i);
+    console.log(myArray[i]);
+}
+console.log(addUser);
+$("#add").text("addUserasddad");
+});
+
+}
 
     
 </script>

@@ -112,7 +112,7 @@
 
                  </div></div></div></div>
              <br>
-             <div  class="sbox1"><div class="txt1">
+             <div  class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="as.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p onclick="selectDoctor()">Petter pianapple</p></div></div>
@@ -120,7 +120,7 @@
 
                  </div></div></div></div>
              <br>
-             <div class="sbox2"><div class="txt1">
+             <div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="ss.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p onclick="selectDoctor()">Ko Lisdwa</p></div></div>
@@ -197,7 +197,26 @@ console.log(txt);
      
     }
 });
+ var addDepart =  '<div class="boxright">';
+var myArray=new Array();
+var leadsRef = firebase.database().ref('/Departments');
 
+
+leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val().Name;
+      console.log(childData);
+     myArray.push(childData);
+     
+     
+    });
+console.log(myArray);
+     var len = myArray.length;
+for(var i=0;i<len; i++){
+   addDepart = addDepart + '<div class="h6">'+ myArray[i]+"</div><br>";
+   }
+   $("#addDepart").html(addDepart);
+}); 
 }
 </script>
 </body>

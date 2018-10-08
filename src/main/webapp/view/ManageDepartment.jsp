@@ -89,7 +89,7 @@
           <div class="h3"><a href="MagageUser.jsp">User</a></div>
         </div></div>
         <div class="boxright">
-        <div class="h6">Internal Clinic</div><br>
+        
             <div class="h6">Ophthalmology</div><br>
             <div class="h6">Oncology</div><br>
             <div class="h6">Orthopaedic Surgery</div><br>

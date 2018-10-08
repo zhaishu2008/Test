@@ -254,10 +254,11 @@ td a:hover:not(.active) {
 
 .sbox{
     background-color: #5574F7;
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 200px;
     font-size: 60px;
+    top: 30px;
 }
 .sbox1{
     position: absolute;

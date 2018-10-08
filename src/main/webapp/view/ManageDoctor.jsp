@@ -85,7 +85,7 @@
            <br>
                  <div class="h3"><a href="ManageDepartment.jsp">Department</a></div>
            <br>
-           <div class="h3"><a href="MagageUser.jsp">User</a></div>
+           <div class="h3"><a href="ManageUser.jsp">User</a></div>
          </div></div>
          <div class="boxright"><div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
@@ -96,7 +96,7 @@
 
                  </div></div></div></div>
              <br>
-             <div  class="sbox1"><div class="txt1">
+             <div  class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="as.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Petter pianapple</p></div></div>
@@ -104,7 +104,7 @@
 
                  </div></div></div></div>
              <br>
-             <div class="sbox2"><div class="txt1">
+             <div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="ss.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Ko Lisdwa</p></div></div>

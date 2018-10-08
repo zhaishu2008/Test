@@ -105,13 +105,7 @@
           <form><input type="text" name="selecteddepartment" id="selectedDepart"value="" style="visibility:hidden"></form>
         </div></div>
         <div id="addDepart" class="boxright">
-            <div class="h6" onclick="selectDepart()">Department1</div><br>
-            <div class="h6" onclick="selectDepart()">Department2</div><br>
-            <div class="h6" onclick="selectDepart()">Department3</div><br>
-            <div class="h6" onclick="selectDepart()">Department4</div><br>
-            <div class="h6" onclick="selectDepart()">Department5</div><br>
-            <div class="h6" onclick="selectDepart()">Department6</div><br>
-            <div class="h6" onclick="selectDepart()">Department7</div>
+           
         </div>
     </div>
 
@@ -153,7 +147,7 @@ function load(){
  console.log(url);
   var previous = document.referrer;
  
-  
+  if(previous.indexOf("&")>0){
       console.log(url);
 var txt=url.split("?")[1];
 var depart=txt.split("&")[0];
@@ -165,30 +159,32 @@ console.log(txt);
        console.log(doctor);
        $("#depart").text(depart);
          $("#doctor").text(doctor);
-     
+  }
     }
 });
    
-   var addDepart = "<div class='h6' onclick='selectDepart()'>";
+        var addDepart = "";
 var myArray=new Array();
-var leadsRef = firebase.database().ref('/Users');
+var leadsRef = firebase.database().ref('/Departments');
+
 
 leadsRef.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
-      var childData = childSnapshot.val().Email;
-     var i = 0;
-     i++;
+      var childData = childSnapshot.val().Name;
+      console.log(childData);
      myArray.push(childData);
-      console.log(myArray);
+     
      
     });
-
+     console.log(myArray);
+     var len = myArray.length;
+for(var i=0;i<len; i++){
+   addDepart = addDepart + '<div class="h6" onclick="selectDepart()">'+ myArray[i]+"</div><br>";
+   }
+   $("#addDepart").html(addDepart);
 });
  
-if (var i=0 ;i<myArray.length;  i++){
-   addDepart = addDepart + myArray[i]+"</div><br>";
-   }
-   $("#doctor").html(addDepart);
+
 }
 
  

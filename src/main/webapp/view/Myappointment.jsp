@@ -86,27 +86,52 @@
 
     </div>
    <div class="right" >My appointment
-      <div class="text"><button class="accordion" style="width: 550px;">Appointment 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button" value="Delcet" style="width: 100px; font-size: 50px;"></p></div>
-       <br>
-       <button class="accordion" style="width: 550px;">Appointment 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button" value="Delect" style="width: 100px; font-size: 50px;"></p></div>
-          <br>
-       <button class="accordion" style="width: 550px;">Appointment 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoctorName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</button><div class="panel" style="text-align: left;"><p>Appointment<br>Data:  XX/XX/XX<br>Time: XX/XX XX<br>Doctor: XXX<br>Department: XXXXXXXX<br>Address: XXXXXXXXX<br><input type="button"  value="Delect" style="width: 100px; font-size: 50px;"></p></div>
-          
+      <div id="add" class="text">
+         
+   </div>
        
        <script>
            window.onload = onload();
            function onload(){
            firebase.auth().onAuthStateChanged(function(user){
     if(user) {
-    
   var uid = user.uid;
-  
-     firebase.database().ref('/Users/' + uid+"/Appointments").once('value').then(function(snapshot) {
-    console.log(snapshot.val());
-   
-  });
- }});
-}
+
+     var addDepart = "";
+var dn=new Array();
+var da=new Array();
+var tm=new Array();
+var dp=new Array();
+var co=new Array();
+var leadsRef = firebase.database().ref('/Users/'+uid+'/Appointments');
+
+
+leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var doctorname = childSnapshot.val().DoctorName;
+       var date = childSnapshot.val().Date;
+        var time = childSnapshot.val().Time;
+         var depart = childSnapshot.val().Department;
+         var comments=childSnapshot.val().Comments;
+     console.log(childSnapshot.val());
+     dn.push(doctorname);
+     da.push(date);
+     tm.push(time);
+     dp.push(depart);
+     co.push(comments);
+     
+    });
+    console.log(dn);
+     var len = dn.length;
+for(var i=0;i<len; i++){
+   addDepart = addDepart + '<button class="accordion" style="width: 550px;">Appointment '+(i+1)+dn[i]+tm[i]+'</button><div class="panel" style="text-align: left;"><p>Appointment<br>Date:  '
+   +da[i]+"<br>Time: "+tm[i]+"<br>Doctor: "+dn[i]+"<br>Department: "+dp[i]+"<br>Comments: "+co[i]+'<br><input type="button" value="Delect" style="width: 100px; font-size: 50px;"></p></div><br>';
+   }
+   $("#add").html(addDepart);
+   console.log(addDepart);
+});
+ }
+ });}
 
 
           var acc = document.getElementsByClassName("accordion");
