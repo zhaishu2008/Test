@@ -104,7 +104,7 @@
           <div class="h3"><a href="MakeappointmentTime.jsp">Select Time</a></div>
           <form><input type="text" name="selecteddepartment" id="selectedDepart"value="" style="visibility:hidden"></form>
         </div></div>
-        <div class="boxright">
+        <div id="addDepart" class="boxright">
             <div class="h6" onclick="selectDepart()">Department1</div><br>
             <div class="h6" onclick="selectDepart()">Department2</div><br>
             <div class="h6" onclick="selectDepart()">Department3</div><br>
@@ -168,7 +168,30 @@ console.log(txt);
      
     }
 });
+   
+   var addDepart = "<div class='h6' onclick='selectDepart()'>";
+var myArray=new Array();
+var leadsRef = firebase.database().ref('/Users');
+
+leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val().Email;
+     var i = 0;
+     i++;
+     myArray.push(childData);
+      console.log(myArray);
+     
+    });
+
+});
+ 
+if (var i=0 ;i<myArray.length;  i++){
+   addDepart = addDepart + myArray[i]+"</div><br>";
+   }
+   $("#doctor").html(addDepart);
 }
+
+ 
 </script>
     </body>
     
