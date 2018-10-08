@@ -1,8 +1,9 @@
 <%-- 
-    Document   : newjsp
-    Created on : Sep 30, 2018, 2:52:09 PM
+    Document   : AdminAddUser
+    Created on : Oct 8, 2018, 10:06:07 PM
     Author     : Jesse
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -68,37 +69,31 @@
          </div>
         <div class="table">
          <table>
-          <tr>
-          <td><a href="Homepage.jsp">Homepage</a></td>
-      </tr>
+          
          <tr>
-             <td><a href="Profile.jsp">My Profile</a></td>
+             <td><a href="Management.jsp">Management</a></td>
          </tr>
-         <tr>
-             <td><a href="MakeappointmentHome.jsp">Make appointment</a>
-         </tr>
-         <tr>
-             <td><a href="Myappointment.jsp">My appointment</a></td>
-         </tr>
+         
+         
          </table></div>
                  <br>
         <div class="h2"><button id="logout" class="LogOutBt">Log out</button></div>
          
          </div>
          
-         <div class="right" >Profile
+         <div class="right" >Add User
             
              <div class="text"><div class="column"></div><div class="column"><div class="h3">First Name</div><input type="text" id="fname" placeholder="Your First name" style="height: 30px;">
                  <div class="h3">Phone</div><input id="number" type="text" placeholder="000-000-0000" style="height: 30px;"></div>
                  <div class="column"><div class="h3">Last Name</div><input id="lname" type="text" id="lastname" placeholder="Your Last name" style="height: 30px;">
-                                  <div class="h3">Dob</div><input id="dob" type="date" placeholder="XX/XX/XX" style="height: 30px;">
-
+                 <div class="h3">Dob</div><input id="dob" type="date" value="1990-08-26" style="height: 30px;">
                  </div>
                  <br>
+                 <br><br><br>
                 
                
             </div>
-             <button class="SaveBt" onclick="update()">Save</button>
+             <button class="SaveBt" onclick="addUser()">Add</button>
          </div>
         </div>
       </h1>
@@ -107,40 +102,31 @@
      
     
     
-    window.onload = load();
+   
     
     
     
-    function load() {
-        
-        
-       firebase.auth().onAuthStateChanged(function(user){
-    if(user) {
-    
-  var uid = user.uid;
-  
-     firebase.database().ref('/Users/' + uid).once('value').then(function(snapshot) {
-    $("#fname").val(snapshot.val().Firstname);
-    $("#lname").val(snapshot.val().Lastname);
-    $("#number").val(snapshot.val().PhoneNum);
-    $("#dob").val(snapshot.val().DOB);
-  });
- }});
-}
 
-   function update(){
+   function addUser(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user) {
-        firebase.database().ref('Users/'+user.uid).update({
+        var appointmentRef = firebase.database().ref('/Users');
+    appointmentRef.push().set({
     Lastname: $("#lname").val(),
     Firstname: $("#fname").val(),
-    PhoneNum: $("#number").val()
-    
-  });  
-   window.alert("save successfully");
+    PhoneNum: $("#number").val(),
+     DOB: $("#dob").val()
+  }).then(function(){
+    console.log("success");
+  }).catch(function(err){
+    console.error("error：",err);
+  });
+        
+   window.alert("Add User successfully");
   }}); 
    }
    
 </script>
   </body>
 </html>
+

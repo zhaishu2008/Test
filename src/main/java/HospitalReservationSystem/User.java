@@ -13,6 +13,7 @@ public class User {
     private String email;
     private String password;
     
+    
     public User(){}//无参构造器
 
     public String getEmail() {

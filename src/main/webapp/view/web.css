@@ -413,3 +413,8 @@ td a:hover:not(.active) {
 }
 
 .ConfirmBt:hover {opacity: 1}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+            /* デザインが崩れない程度にpx調整 */
+            padding: 20px;
+        }

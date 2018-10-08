@@ -87,7 +87,7 @@
              <div class="text"><div class="column"></div><div class="column"><div class="h3">First Name</div><input type="text" id="fname" placeholder="Your First name" style="height: 30px;">
                  <div class="h3">Phone</div><input id="number" type="text" placeholder="000-000-0000" style="height: 30px;"></div>
                  <div class="column"><div class="h3">Last Name</div><input id="lname" type="text" id="lastname" placeholder="Your Last name" style="height: 30px;">
-                 <div class="h3">Dob</div><input id="dob" type="text" placeholder="XX/XX/XX" style="height: 30px;">
+                 <div class="h3">Dob</div><input id="dob" type="date" placeholder="XX/XX/XX" style="height: 30px;">
                  </div>
                  <br>
                  <br><br><br>
@@ -120,7 +120,8 @@
     $("#fname").val(snapshot.val().Firstname);
     $("#lname").val(snapshot.val().Lastname);
     $("#number").val(snapshot.val().PhoneNum);
-    
+        $("#dob").val(snapshot.val().DOB);
+
     
   });
  }});

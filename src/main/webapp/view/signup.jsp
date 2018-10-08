@@ -53,11 +53,7 @@
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <link rel="stylesheet" href="dateCss/default.css" id="theme_base">
 
-<link rel="stylesheet" href="dateCss/default.date.css" id="theme_date">
-
-<link rel="stylesheet" href="dateCss/default.time.css" id="theme_time">
 
 <script src="../lib/picker.js"></script>
 
@@ -66,6 +62,9 @@
     <script src="../lib/picker.time.js"></script>
 
     </head>
+    <jsp:useBean id="staffsignup" scope="page" class="HospitalReservationSystem.Doctor">
+         <jsp:setProperty name="staffsignup" property="staffcode"/>
+    </jsp:useBean>
     <body background="../images/login.jpeg">
 
  <a href="../index.jsp">
@@ -105,14 +104,22 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
   <input type="radio" name="gender" id="sex2" value="female"> Female
 </label>
                 <br/>
-                <br/>
+                
    <div class="form-group">
     <label for="DOB">Date Of Birth</label>
-    <input id="DOB" class="form-control" placeholder="01/01/1900">
+    <input id="DOB" type="date" class="form-control" value="1900/01/01">
     
   </div>
-               
                 <br/>
+                <div class="form-group">
+                    
+    <label for="Isstaff">Staff code</label>
+   
+    <input id="staffcode" name="staffsignup" property="staffcode" class="form-control" placeholder="00000">
+                    
+  </div>
+               
+               
                 <br/>
                 <center><input type =“button” value="Sign up" class="btn btn-primary" onclick="signup()"></center>
                 <br />
@@ -122,7 +129,7 @@ margin-left: auto; margin-right: auto; margin-top: 10%; margin-bottom: auto; tex
 </div>
 
 <script>
-    var $input = $("#DOB").pickadate();
+  
 
 
   </script>

@@ -88,6 +88,9 @@
            <div class="h3"><a href="MagageUser.jsp">User</a></div>
          </div></div>
          <div class="boxright"><div class="sbox"><div class="txt1">
+                     <div> <a href="AdminAddUser.jsp">
+       <img src="../images/add.png" width="8%" height="30px">
+                         </a></div>
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
              <div class="column4">
                  <div class="h4" ><br><p>Better Jeson</p></div></div>
@@ -135,7 +138,24 @@
                  var popup = document.getElementById("myPopupx");
                  popup.classList.toggle("show");
              }
+             
+window.onload=onload();
+function onload(){
+    var myArray=new Array();
+var leadsRef = firebase.database().ref('/Users');
 
+leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val().Email;
+     var i = 0;
+     i++;
+     myArray.push(childData);
+      console.log(myArray);
+     
+    });
+});}
+
+    
 </script>
 </body>
 </html>
