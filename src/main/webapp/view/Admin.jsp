@@ -83,7 +83,7 @@
            <br>
                  <div class="h3"><a href="ManageDepartment.jsp">Department</a></div>
            <br>
-           <div class="h3"><a href="MagageUser.jsp">User</a></div>
+           <div class="h3"><a href="ManageUser.jsp">User</a></div>
          </div></div>
          <div class="boxright"><div class="sbox"><div class="txt1">
              <div class="card"><div class="column3"><img src="qp.jpeg" alt="qp" style="width:100%"></div><div class="container" >
