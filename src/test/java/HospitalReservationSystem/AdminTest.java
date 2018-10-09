@@ -43,7 +43,7 @@ public class AdminTest {
     @Test(expected=NullPointerException.class)
     public void testUsersLoigin() {
         System.out.println("usersLoigin");
-        User u = null;
+        User u = 11l;
         Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.usersLoigin(u);
