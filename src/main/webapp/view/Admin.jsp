@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Hospital Reservation System</title>
+        <title>Hospital Reservation System11</title>
         <link rel="stylesheet" type="text/css" href="web.css">
 
          <meta charset="UTF-8">
