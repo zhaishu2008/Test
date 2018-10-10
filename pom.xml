@@ -138,8 +138,16 @@
             </plugin>
 
             <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.0</version>
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-war-plugin</artifactId>  
+                <version>2.6</version>  
+                <configuration>                
+                    <warSourceExcludes>WEB-INF/weblogic.xml</warSourceExcludes>  
+                    <packagingExcludes>WEB-INF/lib/solr-core-5.3.0.jar</packagingExcludes>  
+                    <webResources>  
+                          
+                    </webResources>  
+                </configuration>  
             </plugin>
 
             <plugin>
