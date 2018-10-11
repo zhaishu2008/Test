@@ -30,11 +30,14 @@
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <dependency>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-api-1.0-sdk</artifactId>
+        <version>${appengine.target.version}</version>
+    </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-            <type>jar</type>
-            <scope>provided</scope>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
         </dependency>
         <dependency>
             <groupId>jstl</groupId>
