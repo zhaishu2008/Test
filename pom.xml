@@ -99,6 +99,11 @@
     <build>
         <plugins>
             <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>2.0.6</version>
+      </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <version>2.5.1</version>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -115,6 +120,7 @@
                     <archiveClasses>true</archiveClasses>
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
 </project>
